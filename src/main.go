@@ -69,5 +69,15 @@ func artifact(c *gin.Context) {
 		c.AbortWithError(http.StatusInternalServerError, err)
 	}
 
-	c.JSON(http.StatusOK, data)
+	file, _ := os.Create("report.json")
+	defer file.Close()
+	as_json, _ := json.MarshalIndent(data, "", "\t")
+	file.Write(as_json)
+
+	c.Header("Content-Description", "File Transfer")
+	c.Header("Content-Transfer-Encoding", "binary")
+	c.Header("Content-Disposition", "attachment; filename=report.json")
+	c.Header("Content-Type", "application/octet-stream")
+
+	c.File("report.json")
 }
