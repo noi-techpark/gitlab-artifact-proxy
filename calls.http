@@ -1,0 +1,21 @@
+##### VSCODE / REST Client https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+# Create a .env file and set the corresponding variables
+# See all $dotenv fields below
+
+###### 
+# solda4oh downlaod artifact   noi-techpark/solda-4-ohos-ip-compliance
+######
+GET https://gitlab.com/api/v4/projects/54944672/jobs
+PRIVATE-TOKEN: {{ $dotenv  GITLAB_TOKEN }}
+
+###### 
+# solda4oh downlaod artifact   noi-techpark/solda-4-ohos-ip-compliance
+######
+GET https://gitlab.com/api/v4/projects/54944672/jobs/6484912788/artifacts
+PRIVATE-TOKEN: {{ $dotenv GITLAB_TOKEN }}
+
+###### 
+# solda4oh downlaod artifact   noi-techpark/solda-4-ohos-ip-compliance
+######
+GET https://gitlab.com/api/v4/projects/54944672/jobs/artifacts/main/raw/report.json?job=harvest
+PRIVATE-TOKEN: {{ $dotenv GITLAB_TOKEN }}
