@@ -1,4 +1,4 @@
-module opendatahub/sta-nap-export
+module solda/gitlab-artifact-proxy
 
 go 1.21.5
 
